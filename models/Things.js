@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 
-const thingSchema = mongoose.Schema({
+const thingSchema    = mongoose.Schema({
+    "userId": String,
     "name": String,
     "manufacturer": String,
     "description": String,
     "mainPepper": String,
-    "imageUrl:": String,
+    "imageUrl": String,
     "heat": Number,
     "likes": Number,
     "dislikes": Number,
-    "usersliked": String,
-    "usersDisliked": String
+    "usersLiked": [String],
+    "usersDisliked": [String],
 })
 
 module.exports = mongoose.model('Sauce', thingSchema);
