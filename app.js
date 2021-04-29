@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const path = require('path')
 
 const saucesRoutes = require('./routes/sauces')
-const userRoutes = require('./routes/user')
+const userRoutes = require('./routes/user');
+const { db } = require('./models/Sauces');
 
 mongoose.connect('mongodb+srv://i-rem:63nprROcomPHYmPo@cluster0.lvhhp.mongodb.net/soPekocko?retryWrites=true&w=majority',
 { useNewUrlParser: true,
@@ -31,3 +32,4 @@ app.use('/api/sauces', saucesRoutes);
 app.use('/api/auth', userRoutes);
 
 module.exports = app;
+
