@@ -7,12 +7,12 @@ const passWordValidate = require('../models/Validators')
 const validation = passWordValidate.passWordValidator
 
 const User = require('../models/Users');
-
+ 
 exports.signup = (req, res, next) => {
     let validate = validation.validate(req.body.password)
     //let emailEncrypt = CryptoJS.SHA1(req.body.email, 'secret key 123')
     //let emailHash = emailEncrypt.toString(CryptoJS.enc.Hex)
-    let emailHidden = Buffer.from(req.body.email).toString('base64')
+    //let emailHidden = Buffer.from(req.body.email).toString('base64')
      if(validate === true){
         console.log('mot de passe bon')
         
@@ -75,5 +75,3 @@ console.log (originalText)
 
 //const fields = req.query.fields ? mongoMask(req.query.fields, { map }) : null
 
-let email = CryptoJS.SHA3('rsemelin@gmail.com')
-console.log(email)
